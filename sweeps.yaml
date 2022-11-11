@@ -1,0 +1,40 @@
+program: sweeps.py
+method: bayes
+metric:
+  name: exact_match_score
+  goal: maximize
+parameters:
+  model:
+    distribution: categorical
+    values:
+      - ada
+      - curie
+      - babbage
+  suffix:
+    value:
+      av_extraction attribute recognition
+  n_epochs:
+    distribution: int_uniform
+    min: 2
+    max: 8
+  batch_size:
+    distribution: int_uniform
+    min: 2
+    max: 6
+  training_file:
+    value:
+      file-NCUpykAEEMEaMaxXOTeuSf57
+  validation_file:
+    value:
+      file-LsHbX2sxaHCH9Vhfc0uSycZU
+  prompt_loss_weight:
+    distribution: uniform
+    min: 0.001
+    max: 0.2
+  learning_rate_multiplier:
+    distribution: uniform
+    min: 0.001
+    max: 0.2
+  check_if_files_exist:
+    value:
+      - true
